@@ -1,0 +1,38 @@
+{
+    "name": "caffeinne/cart",
+    "description": "Package containing the Cart domain logic",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "caffeinne/core": "dev-main",
+        "caffeinne/catalog": "dev-main",
+        "caffeinne/sales": "dev-main"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "pestphp/pest": "^1.3",
+        "symfony/var-dumper": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Caffeinne\\Cart\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Caffeinne\\Cart\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "name": "caffeinne/test-suite",
+    "description": "Utilities classes for tests development ",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Caffeinne\\TestSuite\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
