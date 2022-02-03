@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ruleset name="Photoweb Standard">
+
+    <description>Caffeinne Coding Standard.</description>
+
+    <rule ref="PSR2">
+        <exclude name="PSR1.Methods.CamelCapsMethodName"/>
+        <exclude name="Squiz.WhiteSpace.SuperfluousWhitespace"/>
+    </rule>
+</ruleset>
