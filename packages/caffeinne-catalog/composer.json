@@ -1,0 +1,34 @@
+{
+    "name": "caffeinne/catalog",
+    "description": "Package containing the Catalog domain",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "caffeinne/model": "dev-main",
+        "pestphp/pest": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Caffeinne\\Catalog\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Caffeinne\\Catalog\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

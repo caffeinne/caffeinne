@@ -1,0 +1,33 @@
+{
+    "name": "caffeinne/model",
+    "description": "Package containing classes to help manage Models inside Caffeinne packages",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Caffeinne\\Model\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Caffeinne\\Model\\Test\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

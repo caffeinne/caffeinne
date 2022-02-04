@@ -14,12 +14,17 @@
         }
     ],
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^8.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "caffeinne/event": "dev-main",
+        "caffeinne/model": "dev-main",
+        "caffeinne/catalog": "dev-main",
+        "caffeinne/checkout": "dev-main",
+        "caffeinne/sales": "dev-main"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -38,7 +43,12 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Caffeinne\\Catalog\\": "packages/caffeinne-catalog/src/",
+            "Caffeinne\\Checkout\\": "packages/caffeinne-checkout/src/",
+            "Caffeinne\\Event\\": "packages/caffeinne-event/src/",
+            "Caffeinne\\Model\\": "packages/caffeinne-model/src/",
+            "Caffeinne\\Sales\\": "packages/caffeinne-sales/src/"
         }
     },
     "autoload-dev": {

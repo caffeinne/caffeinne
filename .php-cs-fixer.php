@@ -9,7 +9,7 @@
  */
 
 $finder = PhpCsFixer\Finder::create()
-                ->in('pacakges/');
+                ->in('packages/');
 
 return (new PhpCsFixer\Config())
         ->setFinder($finder)
