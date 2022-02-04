@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Caffeinne\Checkout\Domain\Model\Cart\Item;
 
-use Caffeinne\Checkout\Domain\Model\Cart\ItemInterface;
+use Caffeinne\Checkout\Domain\Model\Cart\Item;
 
 class Collection
 {
@@ -14,7 +14,7 @@ class Collection
      */
     private array $items = [];
 
-    public function addItem(ItemInterface $item): void
+    public function addItem(Item $item): void
     {
         $this->items[] = $item;
     }

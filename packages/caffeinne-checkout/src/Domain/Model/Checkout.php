@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace Caffeinne\Checkout\Domain\Model;
 
-use Caffeinne\Checkout\Domain\Event\CheckoutProceeded;
-use Caffeinne\Event\Domain\Model\DomainEventDispatcher;
-
-class Checkout
+class Checkout implements CheckoutInterface
 {
 
     public function __construct(

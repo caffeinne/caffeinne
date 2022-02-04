@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Caffeinne\Model\Domain\Model;
 
 // @TODO validate the UUID
-class ID
+class ID implements IDInterface
 {
     public function __construct(
         private string $id
@@ -17,7 +17,7 @@ class ID
         return $this->id === (string) $otherId;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->id;
     }

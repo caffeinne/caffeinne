@@ -27,6 +27,13 @@
             "Caffeinne\\Event\\Test\\": "tests"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Caffeinne\\Event\\App\\Providers\\AppServiceProvider"
+            ]
+        }
+    },
     "config": {
         "sort-packages": true
     }

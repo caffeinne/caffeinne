@@ -3,13 +3,12 @@
 declare(strict_types=1);
 
 
-namespace Caffeinne\Checkout\Domain\Model\Cart\Totals;
-
+namespace Caffeinne\Checkout\Domain\Model\Cart\TotalCalculator;
 
 use Caffeinne\Checkout\Domain\Model\Cart\Item\Collection;
 use Caffeinne\Checkout\Domain\Model\Cart\TotalCalculatorInterface;
 
-class SubtotalTotalCalculator implements TotalCalculatorInterface
+class DiscountTotalCalculator implements TotalCalculatorInterface
 {
     public Collection $itemsCollection;
 
@@ -17,11 +16,11 @@ class SubtotalTotalCalculator implements TotalCalculatorInterface
     {
         $totalDiscount = 0;
 
-        foreach($this->itemsCollection->getItems() as $item){
-            $totalDiscount += $item->getPrice();
+        foreach ($this->itemsCollection->getItems() as $item) {
+            $totalDiscount += $item->getFinalPrice() * 0.1;
         }
 
-        return $totalDiscount;
+        return $totalDiscount * -1;
     }
 
     public function setItemsCollection(Collection $collection): void

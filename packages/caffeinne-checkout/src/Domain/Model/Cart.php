@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Caffeinne\Checkout\Domain\Model;
 
+use Caffeinne\Checkout\Domain\Model\Cart\Item;
 use Caffeinne\Checkout\Domain\Model\Cart\Item\Collection;
-use Caffeinne\Checkout\Domain\Model\Cart\ItemInterface;
 use Caffeinne\Checkout\Domain\Model\Cart\TotalCalculatorInterface;
 
-class Cart
+class Cart implements CartInterface
 {
     private array $totalCalculators = [];
 
@@ -17,16 +17,20 @@ class Cart
     ) {
     }
 
-    public function addItem(ItemInterface $item): void
+    public function addItem(Item $item): self
     {
         $this->collection->addItem($item);
+
+        return $this;
     }
 
-    public function addTotalCalculator(TotalCalculatorInterface $total): void
+    public function addTotalCalculator(TotalCalculatorInterface $total): self
     {
         $this->totalCalculators[] = $total;
 
         $total->setItemsCollection($this->collection);
+
+        return $this;
     }
 
     public function getTotal(): float

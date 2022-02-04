@@ -11,13 +11,23 @@ class Product
     public function __construct(
         public readonly ID $id,
         public string $sku,
-        public float $price,
-        public int $quantity = 0
+        protected float $price,
+        protected int $stock = 0
     ) {
     }
 
     public function haveStock(int $qty=0)
     {
-        return $this->quantity >= $qty;
+        return $this->stock >= $qty;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function getStock()
+    {
+        return $this->stock;
     }
 }

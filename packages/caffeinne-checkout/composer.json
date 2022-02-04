@@ -27,6 +27,13 @@
             "Caffeinne\\Checkout\\Test\\": "tests"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Caffeinne\\Checkout\\App\\Providers\\AppServiceProvider"
+            ]
+        }
+    },
     "config": {
         "sort-packages": true
     }

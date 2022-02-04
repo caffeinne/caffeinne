@@ -2,14 +2,12 @@
 
 declare(strict_types=1);
 
-
-namespace Caffeinne\Event\App\Adapter\Service\EventService;
-
+namespace Caffeinne\Event\App\Adapter\Service\ExternalEventService;
 
 use Caffeinne\Event\Domain\Model\DomainEventInterface;
 use Caffeinne\Event\Domain\Service\ExternalEventServiceInterface;
 
-class LaravelExternalEventDispatcherAdapter implements ExternalEventServiceInterface
+class LaravelEventDispatcherAdapter implements ExternalEventServiceInterface
 {
 
     protected \Illuminate\Events\Dispatcher $laravelDispatcher;

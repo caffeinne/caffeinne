@@ -1,8 +1,13 @@
 <?php
 
 use Caffeinne\Checkout\App\Adapter\Cart\Item\CaffeinneProductItemAdapter;
-use Caffeinne\Checkout\Domain\Model\Cart;
-use Caffeinne\Checkout\Domain\Model\Checkout;
+use Caffeinne\Checkout\Domain\Model\CartInterface;
+use Caffeinne\Checkout\Domain\Model\CheckoutInterface;
+use Caffeinne\Checkout\Domain\Service\CartService;
+use Caffeinne\Checkout\Domain\Service\CheckoutService;
+use Caffeinne\Checkout\Domain\Service\ExternalModule\CatalogServiceInterface;
+use Caffeinne\Model\Domain\Model\ID;
+use Caffeinne\Model\Domain\Model\ID\GeneratorInterface;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,51 +24,50 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     //return view('welcome');
 
-    $laravelEventService = app(\Caffeinne\Event\App\Adapter\Service\EventService\LaravelExternalEventDispatcherAdapter::class);
+    /** @var GeneratorInterface $idGenerator */
+    $idGenerator = app(GeneratorInterface::class);
 
-    $eventDispacher = new \Caffeinne\Event\Domain\Model\DomainEventDispatcher($laravelEventService);
+//    $cartService = app(CartService::class);
+//    $cartService->addProductToCart
 
-    $product1 = new \Caffeinne\Catalog\Domain\Model\Product(
-        new \Caffeinne\Model\Domain\Model\ID('704cb84a-ed46-4fdb-a1a2-4370b1a3ebf2'),
-        'product-1',
-        5,
-        10
-    );
 
-    $product2 = new \Caffeinne\Catalog\Domain\Model\Product(
-        new \Caffeinne\Model\Domain\Model\ID('704cb84a-ed46-4fdb-a1a2-4370b1a3ebf2'),
-        'product-2',
-        5,
-        10
-    );
 
-    $cart = new Cart();
+//    $productRepository = app(\Caffeinne\Catalog\Domain\Model\ProductRepositoryInterface::class);
+//
+//    $product = $productRepository->getById(
+//        $idGenerator->generate()
+//    );
+//
+//    dd($product);
 
-    $cart->addItem(
-        new CaffeinneProductItemAdapter($product1)
-    );
-
-    $cart->addItem(
-        new CaffeinneProductItemAdapter($product2)
-    );
-
-    $cart->addTotalCalculator(
-        new Cart\Totals\SubtotalTotalCalculator()
-    );
-
-    $cart->addTotalCalculator(
-        new Cart\Totals\DiscountTotalCalculator()
-    );
-
-    $checkout = new Checkout($cart);
-
-    $checkoutService = new \Caffeinne\Checkout\Domain\Service\CheckoutService($eventDispacher);
-
-    $checkoutService->proceedCheckout($checkout);
-
-    dd(
-        $cart->getTotal(),
-//        $order,
-        $cart
-    );
+//    /** @var CatalogServiceInterface $catalogService */
+//    $catalogService = app(CatalogServiceInterface::class);
+//
+//    $item1 = $catalogService->transformProductIntoCartItem(
+//        $idGenerator->generate()
+//    );
+//
+//    $item2 = $catalogService->transformProductIntoCartItem(
+//        $idGenerator->generate()
+//    );
+//
+//    $cart = app(CartInterface::class);
+//
+//    $cart->addItem($item1)
+//        ->addItem($item2);
+//
+//    $checkout = app(CheckoutInterface::class, [
+//        'cart' => $cart,
+//    ]);
+//
+//    /** @var CheckoutService $checkoutService */
+//    $checkoutService = app(CheckoutService::class);
+//
+//    $checkoutService->proceedCheckout($checkout);
+//
+//    dd(
+//        $cart->getTotal(),
+////        $order,
+//        $cart
+//    );
 });

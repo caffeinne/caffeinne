@@ -28,6 +28,13 @@
             "Caffeinne\\Catalog\\Test\\": "tests"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Caffeinne\\Catalog\\App\\Providers\\AppServiceProvider"
+            ]
+        }
+    },
     "config": {
         "sort-packages": true
     }

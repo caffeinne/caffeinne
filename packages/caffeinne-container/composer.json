@@ -1,6 +1,6 @@
 {
-    "name": "caffeinne/model",
-    "description": "Package containing classes to help manage Models inside Caffeinne packages",
+    "name": "caffeinne/container",
+    "description": "Package containing the container logic",
     "license": "MIT",
     "repositories": [
         {
@@ -19,18 +19,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Caffeinne\\Model\\": "src"
+            "Caffeinne\\Container\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Caffeinne\\Model\\Test\\": "tests"
+            "Caffeinne\\Container\\Test\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Caffeinne\\Model\\App\\Providers\\AppServiceProvider"
+                "Caffeinne\\Container\\Providers\\AppServiceProvider"
             ]
         }
     },

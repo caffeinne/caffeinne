@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "026014062898a6fae7860eda091dd6c2",
+    "content-hash": "782c19ef9b59f2e676eda2372c46e5c1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -128,7 +128,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/caffeinne-catalog",
-                "reference": "10accfd88215f94a17c82ac287402c09818edfd5"
+                "reference": "5b8a303cb40054efd091af45e4ecca9ba18e3cc6"
             },
             "require": {
                 "php": "^8.0"
@@ -138,6 +138,13 @@
                 "pestphp/pest": "^1.3"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Caffeinne\\Catalog\\App\\Providers\\AppServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Caffeinne\\Catalog\\": "src"
@@ -163,7 +170,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/caffeinne-checkout",
-                "reference": "9a2a12085f6ddfe245fa3758d972cfc0b91c56ef"
+                "reference": "a45f32edbee063fe2b143903276966130f719998"
             },
             "require": {
                 "php": "^8.0"
@@ -172,6 +179,13 @@
                 "pestphp/pest": "^1.3"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Caffeinne\\Checkout\\App\\Providers\\AppServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Caffeinne\\Checkout\\": "src"
@@ -192,12 +206,12 @@
             }
         },
         {
-            "name": "caffeinne/event",
+            "name": "caffeinne/container",
             "version": "dev-main",
             "dist": {
                 "type": "path",
-                "url": "packages/caffeinne-event",
-                "reference": "23a22a134f8d9ea14cc66880740cc40d86165e6d"
+                "url": "packages/caffeinne-container",
+                "reference": "c29a7f85f496f3fc457f14db83dd12e2334fc389"
             },
             "require": {
                 "php": "^8.0"
@@ -206,6 +220,54 @@
                 "pestphp/pest": "^1.3"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Caffeinne\\Container\\Providers\\AppServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Caffeinne\\Container\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Caffeinne\\Container\\Test\\": "tests"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Package containing the container logic",
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "caffeinne/event",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/caffeinne-event",
+                "reference": "3b87ba1d9d9b3d33c52a7878e737ee09ad66e09d"
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Caffeinne\\Event\\App\\Providers\\AppServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Caffeinne\\Event\\": "src"
@@ -231,7 +293,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/caffeinne-model",
-                "reference": "a9a94a9a1fbe0bad1a7c54419ec288985075a71c"
+                "reference": "b1e9bcddae9562ccd7b33f5902688ebab6d0622f"
             },
             "require": {
                 "php": "^8.0"
@@ -240,6 +302,13 @@
                 "pestphp/pest": "^1.3"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Caffeinne\\Model\\App\\Providers\\AppServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Caffeinne\\Model\\": "src"
@@ -5628,16 +5697,16 @@
         },
         {
             "name": "composer/semver",
-            "version": "3.2.8",
+            "version": "3.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "3976a9e563da06e8dd8ca856fa2adcd66cdd98f3"
+                "reference": "a951f614bd64dcd26137bc9b7b2637ddcfc57649"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/3976a9e563da06e8dd8ca856fa2adcd66cdd98f3",
-                "reference": "3976a9e563da06e8dd8ca856fa2adcd66cdd98f3",
+                "url": "https://api.github.com/repos/composer/semver/zipball/a951f614bd64dcd26137bc9b7b2637ddcfc57649",
+                "reference": "a951f614bd64dcd26137bc9b7b2637ddcfc57649",
                 "shasum": ""
             },
             "require": {
@@ -5689,7 +5758,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.2.8"
+                "source": "https://github.com/composer/semver/tree/3.2.9"
             },
             "funding": [
                 {
@@ -5705,7 +5774,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-04T12:12:24+00:00"
+            "time": "2022-02-04T13:58:43+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -9107,6 +9176,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "caffeinne/container": 20,
         "caffeinne/event": 20,
         "caffeinne/model": 20,
         "caffeinne/catalog": 20,
@@ -9116,7 +9186,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3|^8.0"
+        "php": "^8.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
