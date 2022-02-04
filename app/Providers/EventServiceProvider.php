@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Caffeinne\Checkout\Domain\Event\CheckoutProceeded;
-use Caffeinne\Sales\Observer\CreateOrderWhenProceedCheckout;
+use Caffeinne\Sales\Observer\CreateOrderWhenProceedCheckoutObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -23,7 +23,7 @@ class EventServiceProvider extends ServiceProvider
 
         // temporary
         CheckoutProceeded::class => [
-            CreateOrderWhenProceedCheckout::class
+            CreateOrderWhenProceedCheckoutObserver::class
         ]
     ];
 

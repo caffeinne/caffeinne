@@ -8,7 +8,7 @@ namespace Caffeinne\Sales\Observer;
 
 use Caffeinne\Checkout\Domain\Event\CheckoutProceeded;
 
-class CreateOrderWhenProceedCheckout
+class CreateOrderWhenProceedCheckoutObserver
 {
 
     public function handle(CheckoutProceeded $evento)
