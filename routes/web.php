@@ -1,6 +1,6 @@
 <?php
 
-use Caffeinne\Checkout\Adapter\Cart\Item\CaffeinneProductItemAdapter;
+use Caffeinne\Checkout\App\Adapter\Cart\Item\CaffeinneProductItemAdapter;
 use Caffeinne\Checkout\Domain\Model\Cart;
 use Caffeinne\Checkout\Domain\Model\Checkout;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     //return view('welcome');
 
-    $laravelEventService = app(\Caffeinne\Event\Adapter\Service\EventService\LaravelExternalEventDispatcherAdapter::class);
+    $laravelEventService = app(\Caffeinne\Event\App\Adapter\Service\EventService\LaravelExternalEventDispatcherAdapter::class);
 
     $eventDispacher = new \Caffeinne\Event\Domain\Model\DomainEventDispatcher($laravelEventService);
 

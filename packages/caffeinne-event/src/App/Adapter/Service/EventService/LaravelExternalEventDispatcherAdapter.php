@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Caffeinne\Event\Adapter\Service\EventService;
+namespace Caffeinne\Event\App\Adapter\Service\EventService;
 
 
 use Caffeinne\Event\Domain\Model\DomainEventInterface;

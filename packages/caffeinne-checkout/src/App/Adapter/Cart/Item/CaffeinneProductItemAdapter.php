@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Caffeinne\Checkout\Adapter\Cart\Item;
+namespace Caffeinne\Checkout\App\Adapter\Cart\Item;
 
 use Caffeinne\Catalog\Domain\Model\Product;
 use Caffeinne\Checkout\Domain\Model\Cart\ItemInterface;
