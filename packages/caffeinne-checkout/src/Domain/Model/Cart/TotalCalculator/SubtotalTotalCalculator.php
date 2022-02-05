@@ -6,12 +6,12 @@ declare(strict_types=1);
 namespace Caffeinne\Checkout\Domain\Model\Cart\TotalCalculator;
 
 
-use Caffeinne\Checkout\Domain\Model\Cart\Item\Collection;
+use Caffeinne\Checkout\Domain\Model\Cart\ItemCollection;
 use Caffeinne\Checkout\Domain\Model\Cart\TotalCalculatorInterface;
 
 class SubtotalTotalCalculator implements TotalCalculatorInterface
 {
-    public Collection $itemsCollection;
+    public ItemCollection $itemsCollection;
 
     public function getTotal(): float
     {
@@ -24,7 +24,7 @@ class SubtotalTotalCalculator implements TotalCalculatorInterface
         return $totalDiscount;
     }
 
-    public function setItemsCollection(Collection $collection): void
+    public function setItemsCollection(ItemCollection $collection): void
     {
         $this->itemsCollection = $collection;
     }

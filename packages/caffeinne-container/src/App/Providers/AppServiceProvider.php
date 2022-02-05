@@ -2,12 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Caffeinne\Container\Providers;
+namespace Caffeinne\Container\App\Providers;
 
-use Caffeinne\Checkout\Domain\Model\CartInterface;
-use Caffeinne\Container\InterceptorManager;
-use Caffeinne\Container\InterceptorManagerInterface;
-use Illuminate\Foundation\Application;
+use Caffeinne\Container\App\InterceptorManagerInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         if (! app()->configurationIsCached()) {
-            $this->mergeConfigFrom(__DIR__.'/../../config/caffeinne.container.php', 'caffeinne.container');
+            $this->mergeConfigFrom(__DIR__.'/../../../config/caffeinne.container.php', 'caffeinne.container');
         }
 
         $this->resolveDefaultBindings();
@@ -37,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if (app()->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../../config/caffeinne.container.php' => config_path('caffeinne.container.php'),
+                __DIR__.'/../../../config/caffeinne.container.php' => config_path('caffeinne.container.php'),
             ], 'caffeinne-container-config');
         }
 
@@ -68,7 +65,7 @@ class AppServiceProvider extends ServiceProvider
 
         foreach ($interceptorManager->getInterceptors() as $original => $interceptors) {
             $this->app->extend($original, function ($concrete) use ($interceptors) {
-                return $this->app->make(\Caffeinne\Container\InterceptorCaller::class, [
+                return $this->app->make(\Caffeinne\Container\App\InterceptorCaller::class, [
                     'concrete' => $concrete,
                     'interceptors' => $interceptors
                 ]);

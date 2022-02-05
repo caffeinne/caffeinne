@@ -2,6 +2,7 @@
 
 use Caffeinne\Checkout\App\Adapter\Cart\Item\CaffeinneProductItemAdapter;
 use Caffeinne\Checkout\Domain\Model\CartInterface;
+use Caffeinne\Checkout\Domain\Model\CartRepositoryInterface;
 use Caffeinne\Checkout\Domain\Model\CheckoutInterface;
 use Caffeinne\Checkout\Domain\Service\CartService;
 use Caffeinne\Checkout\Domain\Service\CheckoutService;
@@ -27,35 +28,18 @@ Route::get('/', function () {
     /** @var GeneratorInterface $idGenerator */
     $idGenerator = app(GeneratorInterface::class);
 
-//    $cartService = app(CartService::class);
-//    $cartService->addProductToCart
+    $productId = $idGenerator->generate();
+    $customerId = $idGenerator->generate();
 
+    /** @var CartRepositoryInterface $cartRepository */
+    $cartRepository = app(CartRepositoryInterface::class);
+    $cart = $cartRepository->getByCustomerId($customerId);
 
+    /** @var CartService $cartService */
+    $cartService = app(CartService::class);
+    $cartService->addProductToCart($productId, $cart);
 
-//    $productRepository = app(\Caffeinne\Catalog\Domain\Model\ProductRepositoryInterface::class);
-//
-//    $product = $productRepository->getById(
-//        $idGenerator->generate()
-//    );
-//
-//    dd($product);
-
-    /** @var CatalogServiceInterface $catalogService */
-    $catalogService = app(CatalogServiceInterface::class);
-
-    $item1 = $catalogService->transformProductIntoCartItem(
-        $idGenerator->generate()
-    );
-
-    $item2 = $catalogService->transformProductIntoCartItem(
-        $idGenerator->generate()
-    );
-
-    $cart = app(CartInterface::class);
-
-    $cart->addItem($item1)
-        ->addItem($item2);
-
+    /** @var CheckoutInterface $checkout */
     $checkout = app(CheckoutInterface::class, [
         'cart' => $cart,
     ]);
@@ -64,10 +48,4 @@ Route::get('/', function () {
     $checkoutService = app(CheckoutService::class);
 
     $checkoutService->proceedCheckout($checkout);
-
-    dd(
-        $cart->getTotal(),
-//        $order,
-        $cart
-    );
 });

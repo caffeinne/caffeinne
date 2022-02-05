@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Caffeinne\Container;
+namespace Caffeinne\Container\App;
 
 class InterceptorManager implements InterceptorManagerInterface
 {

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Caffeinne\Checkout\App\Providers;
 
+use Caffeinne\Checkout\Domain\Model\Cart\TotalCalculatorManagerInterface;
 use Caffeinne\Checkout\Domain\Model\CartInterface;
-use Caffeinne\Container\InterceptorManagerInterface;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
@@ -67,17 +67,12 @@ class AppServiceProvider extends ServiceProvider
             return;
         }
 
-        $this->app->extend(CartInterface::class, function ($cart, $app) use ($calculators) {
+        $this->app->extend(TotalCalculatorManagerInterface::class, function ($calculatorsManager) use ($calculators) {
 
-            /** @var CartInterface $cart */
-            /** @var Application $app */
-            foreach ($calculators as $calculator) {
-                $cart->addTotalCalculator(
-                    $app->make($calculator)
-                );
-            }
+            /** @var TotalCalculatorManagerInterface $calculatorsManager */
+            $calculatorsManager->registerMany($calculators);
 
-            return $cart;
+            return $calculatorsManager;
         });
     }
 }

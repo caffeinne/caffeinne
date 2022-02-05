@@ -2,16 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Caffeinne\Checkout\Domain\Model\Cart\Item;
+namespace Caffeinne\Checkout\Domain\Model\Cart;
 
-use Caffeinne\Checkout\Domain\Model\Cart\Item;
-
-class Collection
+class ItemCollection implements ItemCollectionInterface
 {
 
-    /**
-     * @var array<ItemInterface>
-     */
     private array $items = [];
 
     public function addItem(Item $item): void

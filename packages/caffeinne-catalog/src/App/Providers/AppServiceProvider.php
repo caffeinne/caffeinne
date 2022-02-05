@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Caffeinne\Catalog\App\Providers;
 
-use Caffeinne\Checkout\Domain\Model\CartInterface;
-use Caffeinne\Container\InterceptorManagerInterface;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

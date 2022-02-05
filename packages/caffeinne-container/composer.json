@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Caffeinne\\Container\\Providers\\AppServiceProvider"
+                "Caffeinne\\Container\\App\\Providers\\AppServiceProvider"
             ]
         }
     },

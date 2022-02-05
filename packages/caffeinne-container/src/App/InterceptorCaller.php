@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Caffeinne\Container;
+namespace Caffeinne\Container\App;
 
 use Illuminate\Contracts\Foundation\Application;
 
@@ -62,7 +62,7 @@ class InterceptorCaller
                 continue;
             }
 
-            $interceptor->{$afterMethod}($this->concrete, $result, ...$arguments);
+            $result = $interceptor->{$afterMethod}($this->concrete, $result, ...$arguments);
         }
 
         return $result;
