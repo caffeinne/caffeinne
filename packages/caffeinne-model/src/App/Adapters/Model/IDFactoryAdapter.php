@@ -3,13 +3,14 @@
 declare(strict_types=1);
 
 
-namespace Caffeinne\Model\App\Factories;
+namespace Caffeinne\Model\App\Adapters\Model;
 
 
 use Caffeinne\Model\Domain\Model\ID;
-use Caffeinne\Model\Domain\Model\ID\FactoryInterface;
+use Caffeinne\Model\Domain\Model\IDFactoryInterface;
+use function app;
 
-class IDFactory implements FactoryInterface
+class IDFactoryAdapter implements IDFactoryInterface
 {
 
     public function create(string $id): ID

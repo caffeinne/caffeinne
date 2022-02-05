@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Caffeinne\Catalog\App\Adapters\Product\ProductRepository;
+namespace Caffeinne\Catalog\App\Adapters\Model;
 
 
 use Caffeinne\Catalog\Domain\Model\Product;
@@ -12,7 +12,7 @@ use Caffeinne\Catalog\Domain\Model\ProductRepositoryInterface;
 use Caffeinne\Model\Domain\Model\ID;
 use Faker\Generator;
 
-class FakerProductRepositoryAdapter implements ProductRepositoryInterface
+class ProductRepositoryFakerAdapter implements ProductRepositoryInterface
 {
 
     public function __construct(

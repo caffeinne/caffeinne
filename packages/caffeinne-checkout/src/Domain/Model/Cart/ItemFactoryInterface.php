@@ -3,10 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Caffeinne\Checkout\Domain\Model\Cart\Item;
+namespace Caffeinne\Checkout\Domain\Model\Cart;
 
 
-use Caffeinne\Checkout\Domain\Model\Cart\Item;
 use Caffeinne\Model\Domain\Model\ID;
 
 interface ItemFactoryInterface

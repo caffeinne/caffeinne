@@ -1,7 +1,7 @@
 <?php
 
 
-use Caffeinne\Event\App\Adapter\Service\ExternalEventService\LaravelEventDispatcherAdapter;
+use Caffeinne\Event\App\Adapters\Service\ExternalEventServiceLaravelAdapter;
 use Caffeinne\Event\Domain\Service\ExternalEventServiceInterface;
 
 return [
@@ -9,6 +9,6 @@ return [
 
     ],
     'singletons' => [
-        ExternalEventServiceInterface::class => LaravelEventDispatcherAdapter::class
+        ExternalEventServiceInterface::class => ExternalEventServiceLaravelAdapter::class
     ],
 ];

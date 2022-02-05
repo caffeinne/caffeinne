@@ -1,9 +1,9 @@
 <?php
 
-use Caffeinne\Checkout\App\Adapter\Service\ExternalModule\CatalogService\LocalCatalogServiceAdapter;
-use Caffeinne\Checkout\App\Factories\Cart\ItemFactory;
+use Caffeinne\Checkout\App\Adapters\Model\Cart\ItemFactoryAdapter;
+use Caffeinne\Checkout\App\Adapters\Service\ExternalModule\CatalogService\LocalCatalogServiceAdapter;
 use Caffeinne\Checkout\Domain\Model\Cart;
-use Caffeinne\Checkout\Domain\Model\Cart\Item\ItemFactoryInterface;
+use Caffeinne\Checkout\Domain\Model\Cart\ItemFactoryInterface;
 use Caffeinne\Checkout\Domain\Model\Cart\TotalCalculator\DiscountTotalCalculator;
 use Caffeinne\Checkout\Domain\Model\Cart\TotalCalculator\SubtotalTotalCalculator;
 use Caffeinne\Checkout\Domain\Model\CartInterface;
@@ -17,7 +17,7 @@ return [
         CartInterface::class => Cart::class,
     ],
     'singletons' => [
-        ItemFactoryInterface::class => ItemFactory::class,
+        ItemFactoryInterface::class => ItemFactoryAdapter::class,
         CatalogServiceInterface::class => LocalCatalogServiceAdapter::class,
     ],
     'cart' => [

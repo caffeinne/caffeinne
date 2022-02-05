@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Caffeinne\Checkout\App\Factories\Cart;
+namespace Caffeinne\Checkout\App\Adapters\Model\Cart;
 
 use Caffeinne\Checkout\Domain\Model\Cart\Item;
-use Caffeinne\Checkout\Domain\Model\Cart\Item\ItemFactoryInterface;
+use Caffeinne\Checkout\Domain\Model\Cart\ItemFactoryInterface;
 use Caffeinne\Model\Domain\Model\ID;
+use function app;
 
-class ItemFactory implements ItemFactoryInterface
+class ItemFactoryAdapter implements ItemFactoryInterface
 {
     public function create(
         ID $id,

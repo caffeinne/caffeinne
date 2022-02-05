@@ -40,34 +40,34 @@ Route::get('/', function () {
 //
 //    dd($product);
 
-//    /** @var CatalogServiceInterface $catalogService */
-//    $catalogService = app(CatalogServiceInterface::class);
-//
-//    $item1 = $catalogService->transformProductIntoCartItem(
-//        $idGenerator->generate()
-//    );
-//
-//    $item2 = $catalogService->transformProductIntoCartItem(
-//        $idGenerator->generate()
-//    );
-//
-//    $cart = app(CartInterface::class);
-//
-//    $cart->addItem($item1)
-//        ->addItem($item2);
-//
-//    $checkout = app(CheckoutInterface::class, [
-//        'cart' => $cart,
-//    ]);
-//
-//    /** @var CheckoutService $checkoutService */
-//    $checkoutService = app(CheckoutService::class);
-//
-//    $checkoutService->proceedCheckout($checkout);
-//
-//    dd(
-//        $cart->getTotal(),
-////        $order,
-//        $cart
-//    );
+    /** @var CatalogServiceInterface $catalogService */
+    $catalogService = app(CatalogServiceInterface::class);
+
+    $item1 = $catalogService->transformProductIntoCartItem(
+        $idGenerator->generate()
+    );
+
+    $item2 = $catalogService->transformProductIntoCartItem(
+        $idGenerator->generate()
+    );
+
+    $cart = app(CartInterface::class);
+
+    $cart->addItem($item1)
+        ->addItem($item2);
+
+    $checkout = app(CheckoutInterface::class, [
+        'cart' => $cart,
+    ]);
+
+    /** @var CheckoutService $checkoutService */
+    $checkoutService = app(CheckoutService::class);
+
+    $checkoutService->proceedCheckout($checkout);
+
+    dd(
+        $cart->getTotal(),
+//        $order,
+        $cart
+    );
 });

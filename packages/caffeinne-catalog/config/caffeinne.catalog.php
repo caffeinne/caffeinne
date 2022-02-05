@@ -1,7 +1,7 @@
 <?php
 
-use Caffeinne\Catalog\App\Adapters\Product\ProductFactoryAdapter;
-use Caffeinne\Catalog\App\Adapters\Product\ProductRepository\FakerProductRepositoryAdapter;
+use Caffeinne\Catalog\App\Adapters\Model\ProductRepositoryFakerAdapter;
+use Caffeinne\Catalog\App\Adapters\Model\ProductFactoryAdapter;
 use Caffeinne\Catalog\Domain\Model\ProductFactoryInterface;
 use Caffeinne\Catalog\Domain\Model\ProductRepositoryInterface;
 
@@ -10,7 +10,7 @@ return [
 
     ],
     'singletons' => [
-        ProductRepositoryInterface::class => FakerProductRepositoryAdapter::class,
+        ProductRepositoryInterface::class => ProductRepositoryFakerAdapter::class,
         ProductFactoryInterface::class => ProductFactoryAdapter::class,
     ],
 ];
